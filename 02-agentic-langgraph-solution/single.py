@@ -2,17 +2,11 @@ from langgraph.graph import StateGraph, START, END
 
 # This where where my own code imports start
 from graph_state import GraphState
-from custom_prompts import get_intent
+from custom_prompts import get_intent, handle_generic
 
 
 def handle_product(state: GraphState):
     answer = "What product do you want to buy?"
-    state["answer"] = answer
-    return state
-
-
-def handle_generic(state: GraphState):
-    answer = "I'm sorry, I don't have that information."
     state["answer"] = answer
     return state
 
@@ -35,6 +29,6 @@ workflow.add_edge("intent", END)
 
 app = workflow.compile()
 
-initial_state = {"question": "I want to buy a laptop", "answer": ""}
+initial_state = {"question": "How are you doing today?", "answer": ""}
 result = app.invoke(initial_state)
 print(result)
