@@ -4,3 +4,5 @@ langchain
 langchain_ollama 
 langchain_community 
 python-dotenv
+"psycopg[binary,pool]"
+langgraph-checkpoint-postgres
