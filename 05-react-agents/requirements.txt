@@ -3,3 +3,4 @@ langchain-openai
 python-dotenv
 arize-phoenix-otel
 openinference-instrumentation-langchain 
+arize-phoenix-client
